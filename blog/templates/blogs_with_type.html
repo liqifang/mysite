@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block title %}
+    {{ blog_type.type_name }}
+{% endblock %}
+
+
+{% block content %}
+
+
+    {% for blog in blogs %}
+       <p>博客类型：{{ blog.blog_type.type_name }}</p>
+       <p>博客名：{{ blog.title}}</p>
+       <p>博客内容：{{ blog.content|truncatechars:30}}</p>
+   {% endfor %}
+{% endblock %}
